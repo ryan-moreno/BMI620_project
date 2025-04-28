@@ -1,0 +1,32 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--out data/genetic_correlation_results/sporadic_miscarriage_cannabis_dependence \
+--rg data/formatted_sumstats/sporadic_miscarriage.sumstats.gz,data/formatted_sumstats/cannabis_dependence.sumstats.gz \
+--ref-ld-chr ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/ \
+--w-ld-chr ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/ 
+
+Beginning analysis at Sun Apr 27 20:14:16 2025
+Reading summary statistics from data/formatted_sumstats/sporadic_miscarriage.sumstats.gz ...
+Read summary statistics for 692442 SNPs.
+Reading reference panel LD Score from ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1293150 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1293150 SNPs.
+After merging with reference panel LD, 675534 SNPs remain.
+After merging with regression SNP LD, 675534 SNPs remain.
+Computing rg for phenotype 2/2
+Reading summary statistics from data/formatted_sumstats/cannabis_dependence.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 675534 SNPs remain.
+635395 SNPs with valid alleles.
+ERROR computing rg for phenotype 2/2, from file data/formatted_sumstats/cannabis_dependence.sumstats.gz.
+Analysis finished at Sun Apr 27 20:14:21 2025
+Total time elapsed: 5.64s

@@ -1,0 +1,32 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--out data/heritability_results/sporadic_miscarriage \
+--h2 data/formatted_sumstats/sporadic_miscarriage.sumstats.gz \
+--ref-ld-chr ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/ \
+--w-ld-chr ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/ 
+
+Beginning analysis at Sun Apr 27 19:59:57 2025
+Reading summary statistics from data/formatted_sumstats/sporadic_miscarriage.sumstats.gz ...
+Read summary statistics for 692442 SNPs.
+Reading reference panel LD Score from ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1293150 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1293150 SNPs.
+After merging with reference panel LD, 675534 SNPs remain.
+After merging with regression SNP LD, 675534 SNPs remain.
+Using two-step estimator with cutoff at 30.
+Total Observed scale h2: -0.0002 (0.0005)
+Lambda GC: 0.9751
+Mean Chi^2: 0.9382
+Intercept: 0.9404 (0.006)
+Ratio: NA (mean chi^2 < 1)
+Analysis finished at Sun Apr 27 20:00:01 2025
+Total time elapsed: 3.87s

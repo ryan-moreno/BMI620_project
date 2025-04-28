@@ -1,0 +1,67 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--out data/genetic_correlation_results/sporadic_miscarriage_age_at_first_birth \
+--rg data/formatted_sumstats/sporadic_miscarriage.sumstats.gz,data/formatted_sumstats/age_at_first_birth.sumstats.gz \
+--ref-ld-chr ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/ \
+--w-ld-chr ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/ 
+
+Beginning analysis at Sun Apr 27 20:10:48 2025
+Reading summary statistics from data/formatted_sumstats/sporadic_miscarriage.sumstats.gz ...
+Read summary statistics for 692442 SNPs.
+Reading reference panel LD Score from ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1293150 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1293150 SNPs.
+After merging with reference panel LD, 675534 SNPs remain.
+After merging with regression SNP LD, 675534 SNPs remain.
+Computing rg for phenotype 2/2
+Reading summary statistics from data/formatted_sumstats/age_at_first_birth.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 675534 SNPs remain.
+673336 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: -0.0002 (0.0005)
+Lambda GC: 0.9751
+Mean Chi^2: 0.9381
+Intercept: 0.9406 (0.006)
+Ratio: NA (mean chi^2 < 1)
+
+Heritability of phenotype 2/2
+-----------------------------
+Total Observed scale h2: 0.0567 (0.0023)
+Lambda GC: 1.4853
+Mean Chi^2: 1.6418
+Intercept: 1.0286 (0.0114)
+Ratio: 0.0445 (0.0178)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: -0.0007 (0.0004)
+Mean z1*z2: -0.004
+Intercept: 0.0034 (0.0037)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: nan (nan) (h2  out of bounds) 
+Z-score: nan (nan) (h2  out of bounds)
+P: nan (nan) (h2  out of bounds)
+WARNING: One of the h2's was out of bounds.
+This usually indicates a data-munging error or that h2 or N is low.
+
+
+Summary of Genetic Correlation Results
+                                                      p1                                                     p2 rg se  z  p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+data/formatted_sumstats/sporadic_miscarriage.sumstats.gz data/formatted_sumstats/age_at_first_birth.sumstats.gz NA NA NA NA  0.0567     0.0023  1.0286     0.0114    0.0034       0.0037
+
+Analysis finished at Sun Apr 27 20:10:54 2025
+Total time elapsed: 5.82s

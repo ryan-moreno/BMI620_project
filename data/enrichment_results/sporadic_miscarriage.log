@@ -1,0 +1,37 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--out data/enrichment_results/sporadic_miscarriage \
+--h2 data/formatted_sumstats/sporadic_miscarriage.sumstats.gz \
+--ref-ld-chr ../Homework/hw4/ldsc_inputs/for_enrichment/Baseline/baseline.,../Homework/hw4/ldsc_inputs/for_enrichment/GenoSkylinePlus/GSplus_Tier3_1KGphase3. \
+--w-ld-chr ../Homework/hw4/ldsc_inputs/for_enrichment/weights/weights.hm3_noMHC. \
+--overlap-annot  \
+--frqfile-chr ../Homework/hw4/ldsc_inputs/for_enrichment/genotype/1000G.EUR.QC. 
+
+Beginning analysis at Sun Apr 27 20:00:02 2025
+Reading summary statistics from data/formatted_sumstats/sporadic_miscarriage.sumstats.gz ...
+Read summary statistics for 692442 SNPs.
+Reading reference panel LD Score from ../Homework/hw4/ldsc_inputs/for_enrichment/Baseline/baseline.,../Homework/hw4/ldsc_inputs/for_enrichment/GenoSkylinePlus/GSplus_Tier3_1KGphase3.[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1190321 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from ../Homework/hw4/ldsc_inputs/for_enrichment/weights/weights.hm3_noMHC.[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1187349 SNPs.
+After merging with reference panel LD, 678949 SNPs remain.
+After merging with regression SNP LD, 677319 SNPs remain.
+Removed 0 SNPs with chi^2 > 674.105 (677319 SNPs remain)
+Total Observed scale h2: -0.0005 (0.0004)
+Categories: baseL2_0 Coding_UCSC.bedL2_0 Coding_UCSC.extend.500.bedL2_0 Conserved_LindbladToh.bedL2_0 Conserved_LindbladToh.extend.500.bedL2_0 CTCF_Hoffman.bedL2_0 CTCF_Hoffman.extend.500.bedL2_0 DGF_ENCODE.bedL2_0 DGF_ENCODE.extend.500.bedL2_0 DHS_peaks_Trynka.bedL2_0 DHS_Trynka.bedL2_0 DHS_Trynka.extend.500.bedL2_0 Enhancer_Andersson.bedL2_0 Enhancer_Andersson.extend.500.bedL2_0 Enhancer_Hoffman.bedL2_0 Enhancer_Hoffman.extend.500.bedL2_0 FetalDHS_Trynka.bedL2_0 FetalDHS_Trynka.extend.500.bedL2_0 H3K27ac_Hnisz.bedL2_0 H3K27ac_Hnisz.extend.500.bedL2_0 H3K27ac_PGC2.bedL2_0 H3K27ac_PGC2.extend.500.bedL2_0 H3K4me1_peaks_Trynka.bedL2_0 H3K4me1_Trynka.bedL2_0 H3K4me1_Trynka.extend.500.bedL2_0 H3K4me3_peaks_Trynka.bedL2_0 H3K4me3_Trynka.bedL2_0 H3K4me3_Trynka.extend.500.bedL2_0 H3K9ac_peaks_Trynka.bedL2_0 H3K9ac_Trynka.bedL2_0 H3K9ac_Trynka.extend.500.bedL2_0 Intron_UCSC.bedL2_0 Intron_UCSC.extend.500.bedL2_0 PromoterFlanking_Hoffman.bedL2_0 PromoterFlanking_Hoffman.extend.500.bedL2_0 Promoter_UCSC.bedL2_0 Promoter_UCSC.extend.500.bedL2_0 Repressed_Hoffman.bedL2_0 Repressed_Hoffman.extend.500.bedL2_0 SuperEnhancer_Hnisz.bedL2_0 SuperEnhancer_Hnisz.extend.500.bedL2_0 TFBS_ENCODE.bedL2_0 TFBS_ENCODE.extend.500.bedL2_0 Transcribed_Hoffman.bedL2_0 Transcribed_Hoffman.extend.500.bedL2_0 TSS_Hoffman.bedL2_0 TSS_Hoffman.extend.500.bedL2_0 UTR_3_UCSC.bedL2_0 UTR_3_UCSC.extend.500.bedL2_0 UTR_5_UCSC.bedL2_0 UTR_5_UCSC.extend.500.bedL2_0 WeakEnhancer_Hoffman.bedL2_0 WeakEnhancer_Hoffman.extend.500.bedL2_0 GenoCanyon10KL2_1 Mononuclear_cells_from_peripheral_bloodL2_1 T_cells_CD3+L2_1 T_cells_effector/memory_CD4+_CD25int_CD127+L2_1 T_regulatory_cells_CD4+_CD25+_CD127-L2_1 T_helper_cells_CD4+_CD25-L2_1 T_helper_naive_cells_CD4+_CD25-_CD45RA+L2_1 T_helper_cells_PMA-I_stimulated_CD4+_CD25-_IL17-L2_1 T_helper_17_cells_PMA-I_stimulated_CD4+_CD25-_IL17+L2_1 T_helper_memory_cells_CD4+_CD25-_CD45RO+L2_1 T_helper_memory_cells_from_peripheral_blood_CD4+L2_1 T_memory_cells_CD8+L2_1 T_helper_naive_cells_CD4+L2_1 T_naive_cells_CD8+L2_1 Monocytes_CD14+L2_1 Hematopoietic_stem_cells_G-CSF-mobilized_CD34+L2_1 B_cells_CD19+L2_1 Natural_killer_cells_CD56+L2_1 GM12878_lymphoblastoid_cellsL2_1 ThymusL2_1 SpleenL2_1 Brain_hippocampus_middleL2_1 Brain_substantia_nigraL2_1 Brain_anterior_caudateL2_1 Brain_cingulate_gyrusL2_1 Brain_inferior_temporal_lobeL2_1 Brain_angular_gyrusL2_1 Brain_dorsolateral_prefrontal_cortexL2_1 NH-A_astrocytesL2_1 LungL2_1 NHLF_lung_fibroblast_primary_cellsL2_1 AortaL2_1 Right_atriumL2_1 Left_ventricleL2_1 Right_ventricleL2_1 Muscle_satellite_cultured_cellsL2_1 Psoas_muscleL2_1 Skeletal_muscleL2_1 HSMM_skeletal_muscle_myoblasts_cellsL2_1 HSMM_cell_derived_skeletal_muscle_myotubes_cellsL2_1 Stomach_smooth_muscleL2_1 Duodenum_smooth_muscleL2_1 Colon_smooth_muscleL2_1 Rectal_smooth_muscleL2_1 EsophagusL2_1 GastricL2_1 Stomach_mucosaL2_1 Duodenum_mucosaL2_1 Small_intestineL2_1 Sigmoid_colonL2_1 Colonic_mucosaL2_1 Rectal_mucosaL2_1 PancreasL2_1 Pancreatic_isletsL2_1 LiverL2_1 Adipose_nucleiL2_1 Adipose_derived_mesenchymal_stem_cell_cultured_cellsL2_1 Mesenchymal_stem_cell_derived_adipocyte_cultured_cellsL2_1 Mesenchymal_stem_cell_derived_chondrocyte_cultured_cellsL2_1 Bone_marrow_derived_cultured_mesenchymal_stem_cellsL2_1 Osteoblast_primary_cellsL2_1 NHDF-Ad_adult_dermal_fibroblast_primary_cellsL2_1 NHEK-epidermal_keratinocyteprimary_cellsL2_1 Breast_myoepithelial_primary_cellsL2_1 Breast_variant_human_mammary_epithelial_cells_(vHMEC)L2_1 HMEC_mammary_epithelial_primary_cellsL2_1 OvaryL2_1
+Lambda GC: 0.9751
+Mean Chi^2: 0.9379
+Intercept: 0.941 (0.0058)
+Ratio: NA (mean chi^2 < 1)
+Reading annot matrix from ../Homework/hw4/ldsc_inputs/for_enrichment/Baseline/baseline.,../Homework/hw4/ldsc_inputs/for_enrichment/GenoSkylinePlus/GSplus_Tier3_1KGphase3.[1-22] ... (annot)
+Results printed to data/enrichment_results/sporadic_miscarriage.results
+Analysis finished at Sun Apr 27 20:01:17 2025
+Total time elapsed: 1.0m:15.129999999999995s

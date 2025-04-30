@@ -12,56 +12,54 @@ Call:
 --ref-ld-chr ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/ \
 --w-ld-chr ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/ 
 
-Beginning analysis at Sun Apr 27 20:11:06 2025
+Beginning analysis at Mon Apr 28 17:13:47 2025
 Reading summary statistics from data/formatted_sumstats/sporadic_miscarriage.sumstats.gz ...
-Read summary statistics for 692442 SNPs.
+Read summary statistics for 1212104 SNPs.
 Reading reference panel LD Score from ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
 Read reference panel LD Scores for 1293150 SNPs.
 Removing partitioned LD Scores with zero variance.
 Reading regression weight LD Score from ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
 Read regression weight LD Scores for 1293150 SNPs.
-After merging with reference panel LD, 675534 SNPs remain.
-After merging with regression SNP LD, 675534 SNPs remain.
+After merging with reference panel LD, 1182618 SNPs remain.
+After merging with regression SNP LD, 1182618 SNPs remain.
 Computing rg for phenotype 2/2
 Reading summary statistics from data/formatted_sumstats/income.sumstats.gz ...
 Read summary statistics for 1217311 SNPs.
-After merging with summary statistics, 675534 SNPs remain.
-673167 SNPs with valid alleles.
+After merging with summary statistics, 1182618 SNPs remain.
+1178735 SNPs with valid alleles.
 
 Heritability of phenotype 1
 ---------------------------
-Total Observed scale h2: -0.0002 (0.0005)
-Lambda GC: 0.9751
-Mean Chi^2: 0.938
-Intercept: 0.9403 (0.006)
-Ratio: NA (mean chi^2 < 1)
+Total Observed scale h2: 0.0026 (0.0007)
+Lambda GC: 1.0105
+Mean Chi^2: 1.0193
+Intercept: 0.9859 (0.0058)
+Ratio < 0 (usually indicates GC correction).
 
 Heritability of phenotype 2/2
 -----------------------------
-Total Observed scale h2: 0.0756 (0.0033)
+Total Observed scale h2: 0.0754 (0.0034)
 Lambda GC: 1.3615
-Mean Chi^2: 1.4515
-Intercept: 1.0317 (0.0095)
-Ratio: 0.0702 (0.021)
+Mean Chi^2: 1.4499
+Intercept: 1.0321 (0.0086)
+Ratio: 0.0715 (0.0191)
 
 Genetic Covariance
 ------------------
-Total Observed scale gencov: 0.0008 (0.0006)
-Mean z1*z2: -0.0011
-Intercept: -0.008 (0.0044)
+Total Observed scale gencov: -0.0026 (0.001)
+Mean z1*z2: -0.0066
+Intercept: 0.0154 (0.0049)
 
 Genetic Correlation
 -------------------
-Genetic Correlation: nan (nan) (h2  out of bounds) 
-Z-score: nan (nan) (h2  out of bounds)
-P: nan (nan) (h2  out of bounds)
-WARNING: One of the h2's was out of bounds.
-This usually indicates a data-munging error or that h2 or N is low.
+Genetic Correlation: -0.1858 (0.0719)
+Z-score: -2.5842
+P: 0.0098
 
 
 Summary of Genetic Correlation Results
-                                                      p1                                         p2 rg se  z  p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
-data/formatted_sumstats/sporadic_miscarriage.sumstats.gz data/formatted_sumstats/income.sumstats.gz NA NA NA NA  0.0756     0.0033  1.0317     0.0095    -0.008       0.0044
+                                                      p1                                         p2      rg     se       z      p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+data/formatted_sumstats/sporadic_miscarriage.sumstats.gz data/formatted_sumstats/income.sumstats.gz -0.1858 0.0719 -2.5842 0.0098  0.0754     0.0034  1.0321     0.0086    0.0154       0.0049
 
-Analysis finished at Sun Apr 27 20:11:12 2025
-Total time elapsed: 5.59s
+Analysis finished at Mon Apr 28 17:13:53 2025
+Total time elapsed: 6.36s

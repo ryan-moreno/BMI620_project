@@ -12,21 +12,54 @@ Call:
 --ref-ld-chr ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/ \
 --w-ld-chr ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/ 
 
-Beginning analysis at Sun Apr 27 20:14:16 2025
+Beginning analysis at Mon Apr 28 17:13:33 2025
 Reading summary statistics from data/formatted_sumstats/sporadic_miscarriage.sumstats.gz ...
-Read summary statistics for 692442 SNPs.
+Read summary statistics for 1212104 SNPs.
 Reading reference panel LD Score from ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
 Read reference panel LD Scores for 1293150 SNPs.
 Removing partitioned LD Scores with zero variance.
 Reading regression weight LD Score from ../Homework/hw4/ldsc_inputs/for_h2/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
 Read regression weight LD Scores for 1293150 SNPs.
-After merging with reference panel LD, 675534 SNPs remain.
-After merging with regression SNP LD, 675534 SNPs remain.
+After merging with reference panel LD, 1182618 SNPs remain.
+After merging with regression SNP LD, 1182618 SNPs remain.
 Computing rg for phenotype 2/2
 Reading summary statistics from data/formatted_sumstats/cannabis_dependence.sumstats.gz ...
 Read summary statistics for 1217311 SNPs.
-After merging with summary statistics, 675534 SNPs remain.
-635395 SNPs with valid alleles.
-ERROR computing rg for phenotype 2/2, from file data/formatted_sumstats/cannabis_dependence.sumstats.gz.
-Analysis finished at Sun Apr 27 20:14:21 2025
-Total time elapsed: 5.64s
+After merging with summary statistics, 1182618 SNPs remain.
+1111113 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.0025 (0.0007)
+Lambda GC: 1.0135
+Mean Chi^2: 1.0212
+Intercept: 0.9878 (0.0069)
+Ratio < 0 (usually indicates GC correction).
+
+Heritability of phenotype 2/2
+-----------------------------
+Total Observed scale h2: 0.0197 (0.0017)
+Lambda GC: 1.1301
+Mean Chi^2: 1.1407
+Intercept: 1.0002 (0.0074)
+Ratio: 0.0012 (0.0527)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0047 (0.0008)
+Mean z1*z2: 0.0423
+Intercept: -0.0031 (0.005)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.6629 (0.1395)
+Z-score: 4.7512
+P: 2.0225e-06
+
+
+Summary of Genetic Correlation Results
+                                                      p1                                                      p2     rg     se      z          p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+data/formatted_sumstats/sporadic_miscarriage.sumstats.gz data/formatted_sumstats/cannabis_dependence.sumstats.gz 0.6629 0.1395 4.7512 2.0225e-06  0.0197     0.0017  1.0002     0.0074   -0.0031        0.005
+
+Analysis finished at Mon Apr 28 17:13:39 2025
+Total time elapsed: 6.31s

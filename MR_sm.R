@@ -48,9 +48,9 @@ res_single <- mr_singlesnp(harmonized_data, all_method = c("mr_ivw_fe")) %>% as_
 mr_res
 res_single
 
-write.csv(harmonized_data, "data/mr_dat_age")
-write.csv(mr_res, "data/mr_res_age.csv")
-write.csv(res_single, "data/res_single_age.csv")
+write.csv(harmonized_data, "exposure/mr_dat_age")
+write.csv(mr_res, "exposure/mr_res_age.csv")
+write.csv(res_single, "exposure/res_single_age.csv")
 
 out_raw <- fread("sumstats/Income.txt")
 out_raw <- as.data.frame(out_raw)
@@ -77,9 +77,9 @@ res_single <- mr_singlesnp(harmonized_data, all_method = c("mr_ivw_fe")) %>% as_
 mr_res
 res_single
 
-write.csv(harmonized_data, "data/mr_dat_income")
-write.csv(mr_res, "data/mr_res_income.csv")
-write.csv(res_single, "data/res_single_income.csv")
+write.csv(harmonized_data, "exposure/mr_dat_income")
+write.csv(mr_res, "exposure/mr_res_income.csv")
+write.csv(res_single, "exposure/res_single_income.csv")
 
 
 out_raw <- fread("sumstats/Post-Traumatic_Stress_Disorder.results")
@@ -108,9 +108,9 @@ res_single <- mr_singlesnp(harmonized_data, all_method = c("mr_ivw_fe")) %>% as_
 mr_res
 res_single
 
-write.csv(harmonized_data, "data/mr_dat_ptsd")
-write.csv(mr_res, "data/mr_res_ptsd.csv")
-write.csv(res_single, "data/res_single_ptsd.csv")
+write.csv(harmonized_data, "exposure/mr_dat_ptsd")
+write.csv(mr_res, "exposure/mr_res_ptsd.csv")
+write.csv(res_single, "exposure/res_single_ptsd.csv")
 
 
 out_raw <- fread("sumstats/Insomnia.txt")
@@ -139,9 +139,9 @@ res_single <- mr_singlesnp(harmonized_data, all_method = c("mr_ivw_fe")) %>% as_
 mr_res
 res_single
 
-write.csv(harmonized_data, "data/mr_dat_insomnia")
-write.csv(mr_res, "data/mr_res_insomnia.csv")
-write.csv(res_single, "data/res_single_insomnia.csv")
+write.csv(harmonized_data, "exposure/mr_dat_insomnia")
+write.csv(mr_res, "exposure/mr_res_insomnia.csv")
+write.csv(res_single, "exposure/res_single_insomnia.csv")
 
 out_raw <- fread("sumstats/COVID.txt")
 out_raw <- as.data.frame(out_raw)
@@ -168,9 +168,9 @@ res_single <- mr_singlesnp(harmonized_data, all_method = c("mr_ivw_fe")) %>% as_
 mr_res
 res_single
 
-write.csv(harmonized_data, "data/mr_dat_covid")
-write.csv(mr_res, "data/mr_res_covid.csv")
-write.csv(res_single, "data/res_single_covid.csv")
+write.csv(harmonized_data, "exposure/mr_dat_covid")
+write.csv(mr_res, "exposure/mr_res_covid.csv")
+write.csv(res_single, "exposure/res_single_covid.csv")
 
 out_raw <- fread("sumstats/Chronotype.txt")
 out_raw <- as.data.frame(out_raw)
@@ -197,6 +197,6 @@ res_single <- mr_singlesnp(harmonized_data, all_method = c("mr_ivw_fe")) %>% as_
 mr_res
 res_single
 
-write.csv(harmonized_data, "data/mr_dat_chrono")
-write.csv(mr_res, "data/mr_res_chrono.csv")
-write.csv(res_single, "data/res_single_chrono.csv")
+write.csv(harmonized_data, "exposure/mr_dat_chrono")
+write.csv(mr_res, "exposure/mr_res_chrono.csv")
+write.csv(res_single, "exposure/res_single_chrono.csv")

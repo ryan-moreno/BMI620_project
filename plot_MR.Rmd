@@ -77,6 +77,19 @@ scatter_out_p
 forrest_p <- mr_forest_plot(res_single)
 forrest_p[[1]]
 
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]]
+
 ```
 
 ```{r}
@@ -139,10 +152,23 @@ scatter_out_p
 forrest_p <- mr_forest_plot(res_single)
 forrest_p[[1]]
 
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]]
+
+
 ```
 
 ```{r}
-
 mr_dat <- read.csv("exposure/mr_dat_covid")
 mr_res <- read.csv("exposure/mr_res_covid.csv")
 res_single <- read.csv("exposure/res_single_covid.csv")
@@ -200,6 +226,20 @@ scatter_out_p
 
 forrest_p <- mr_forest_plot(res_single)
 forrest_p[[1]]
+
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]]
+
 ```
 
 ```{r}
@@ -261,6 +301,19 @@ scatter_out_p
 
 forrest_p <- mr_forest_plot(res_single)
 forrest_p[[1]]
+
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]]
 
 ```
 
@@ -324,10 +377,22 @@ scatter_out_p
 forrest_p <- mr_forest_plot(res_single)
 forrest_p[[1]]
 
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]]
+
 ```
 
 ```{r}
-
 mr_dat <- read.csv("exposure/mr_dat_ptsd")
 mr_res <- read.csv("exposure/mr_res_ptsd.csv")
 res_single <- read.csv("exposure/res_single_ptsd.csv")
@@ -386,15 +451,26 @@ scatter_out_p
 forrest_p <- mr_forest_plot(res_single)
 forrest_p[[1]]
 
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]]
 
 ```
 
+
 ```{r}
-
-
-mr_dat <- read.csv("outcome/mr_dat_age")
-mr_res <- read.csv("outcome/mr_res_age.csv")
-res_single <- read.csv("outcome/res_single_age.csv")
+mr_dat <- read.csv("exposure/mr_dat_number")
+mr_res <- read.csv("exposure/mr_res_number.csv")
+res_single <- read.csv("exposure/res_single_number.csv")
 
 mr_res
 
@@ -450,6 +526,102 @@ scatter_out_p
 forrest_p <- mr_forest_plot(res_single)
 forrest_p[[1]]
 
+
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]]
+
+```
+
+
+```{r}
+
+mr_dat <- read.csv("outcome/mr_dat_age")
+mr_res <- read.csv("outcome/mr_res_age.csv")
+res_single <- read.csv("outcome/res_single_age.csv")
+
+mr_res
+
+res_pleio <- mr_pleiotropy_test(mr_dat)
+
+res_pleio %>%
+  select(-id.exposure, -id.outcome, -outcome, -exposure) %>%
+  gt() %>%
+  fmt_number(
+    columns = c('egger_intercept', 'se')
+  ) %>%
+  fmt_number(
+    columns = pval,
+    rows = pval > 0.001,
+    decimals = 3
+  ) %>% 
+  fmt_scientific(
+    columns = pval,
+    rows = pval <= 0.001,
+    decimals = 1
+  )
+
+# Heterogeneity statistics 
+res_het <- mr_heterogeneity(mr_dat, method_list = c(
+  "mr_ivw_fe", "mr_ivw_mre"
+))
+
+res_het %>%
+  select(-id.exposure, -id.outcome, -outcome, -exposure) %>%
+  gt() %>%
+  fmt_number(
+    columns = Q
+  ) %>%
+  fmt_number(
+    columns = Q_pval,
+    rows = Q_pval > 0.001,
+    decimals = 3
+  ) %>% 
+  fmt_scientific(
+    columns = Q_pval,
+    rows = Q_pval <= 0.001,
+    decimals = 1
+  )
+
+scatter_p <- mr_scatter_plot(mr_res, mr_dat)
+scatter_out_p <- scatter_p[[1]] + theme_bw() +
+  guides(color=guide_legend(keywidth = 0.1, label.theme = element_text(size = 10, lineheight = 0.8))) +
+  theme(
+    text = element_text(size = 16),
+  ) +
+  xlab("SNP effect on Age at First Birth") +
+  ylab("SNP effect on Sporadic Miscarriages")
+scatter_out_p
+
+forrest_p <- mr_forest_plot(res_single)
+forrest_p[[1]]
+
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]] + xlab(str_wrap("MR leave-one-out sensitivity analysis for Age at First Birth on Sporadic Miscarriages", width=45)) +
+  theme(
+    axis.title=element_text(size=16),
+    text = element_text(size = 16)
+  ) 
+ 
 ```
 
 ```{r}
@@ -512,6 +684,19 @@ scatter_out_p
 forrest_p <- mr_forest_plot(res_single)
 forrest_p[[1]]
 
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]]
+
 ```
 
 ```{r}
@@ -573,6 +758,20 @@ scatter_out_p
 
 forrest_p <- mr_forest_plot(res_single)
 forrest_p[[1]]
+
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]]
+
 ```
 
 ```{r}
@@ -634,6 +833,20 @@ scatter_out_p
 
 forrest_p <- mr_forest_plot(res_single)
 forrest_p[[1]]
+
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]]
+
 ```
 
 ```{r}
@@ -697,6 +910,19 @@ scatter_out_p
 forrest_p <- mr_forest_plot(res_single)
 forrest_p[[1]]
 
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]]
+
 ```
 
 ```{r}
@@ -759,6 +985,99 @@ scatter_out_p
 forrest_p <- mr_forest_plot(res_single)
 forrest_p[[1]]
 
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo)
+p3[[1]]
 
 ```
 
+
+```{r}
+
+mr_dat <- read.csv("outcome/mr_dat_number")
+mr_res <- read.csv("outcome/mr_res_number.csv")
+res_single <- read.csv("outcome/res_single_number.csv")
+
+mr_res
+
+res_pleio <- mr_pleiotropy_test(mr_dat)
+
+res_pleio %>%
+  select(-id.exposure, -id.outcome, -outcome, -exposure) %>%
+  gt() %>%
+  fmt_number(
+    columns = c('egger_intercept', 'se')
+  ) %>%
+  fmt_number(
+    columns = pval,
+    rows = pval > 0.001,
+    decimals = 3
+  ) %>% 
+  fmt_scientific(
+    columns = pval,
+    rows = pval <= 0.001,
+    decimals = 1
+  )
+
+# Heterogeneity statistics 
+res_het <- mr_heterogeneity(mr_dat, method_list = c(
+  "mr_ivw_fe", "mr_ivw_mre"
+))
+
+res_het %>%
+  select(-id.exposure, -id.outcome, -outcome, -exposure) %>%
+  gt() %>%
+  fmt_number(
+    columns = Q
+  ) %>%
+  fmt_number(
+    columns = Q_pval,
+    rows = Q_pval > 0.001,
+    decimals = 3
+  ) %>% 
+  fmt_scientific(
+    columns = Q_pval,
+    rows = Q_pval <= 0.001,
+    decimals = 1
+  )
+
+scatter_p <- mr_scatter_plot(mr_res, mr_dat)
+scatter_out_p <- scatter_p[[1]] + theme_bw() +
+  guides(color=guide_legend(keywidth = 0.1, label.theme = element_text(size = 10, lineheight = 0.8))) +
+  theme(
+    text = element_text(size = 16),
+  ) +
+  xlab("SNP effect on Number of Children") +
+  ylab("SNP effect on Sporadic Miscarriages")
+scatter_out_p
+
+forrest_p <- mr_forest_plot(res_single)
+forrest_p[[1]]
+
+funnel_p <- mr_funnel_plot(res_single)
+funnel_out_p <- funnel_p[[1]] + theme_bw() + 
+  guides(color=guide_legend(ncol =1)) + 
+  theme(
+    text = element_text(size = 8), 
+  )
+
+funnel_out_p
+
+res_loo <- mr_leaveoneout(mr_dat)
+p3 <- mr_leaveoneout_plot(res_loo) 
+p3[[1]] + xlab(str_wrap("MR leave-one-out sensitivity analysis for Number of Children on Sporadic Miscarriages", width=45)) +
+  theme(
+    text = element_text(size = 16),
+  ) 
+
+
+```

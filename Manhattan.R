@@ -17,11 +17,12 @@ gwas$BP <- gwas$POS
 gwas$SNP <- gwas$rsID
 head(gwas)
 
-gwas %>% filter(P < 5e-08)
+interest <- gwas %>% filter(P < 5e-08)
+snpsOfInterest <- interest$SNP
 
 # make manhattan plot
 png("manhattan_final.png",units="in",width = 15,height = 8,res=300)
-manhattan(gwas,chr="CHR",bp="BP",p="P",snp="SNP",suggestiveline=F,genomewideline=-log10(5e-08), annotatePval=5e-08)
+manhattan(gwas,chr="CHR",bp="BP",p="P",snp="SNP",suggestiveline=F,genomewideline=-log10(5e-08), annotatePval=5e-08, highlight = snpsOfInterest)
 dev.off()
 
 # make QQ plot
